@@ -1,4 +1,5 @@
 /**
+ * [蘑菇街编程笔试题]
  * @param  {Array} pArray [小蘑的起床时间表]
  * @param  {Array} qArray [小菇的起床时间表]
  * @param  {Number} l      [最早起床时间]

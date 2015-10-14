@@ -1,3 +1,7 @@
+/**
+ * [冒泡排序2]
+ * @author Lesty
+ */
 var arr = [3, 1, 5, 7, 9, 2, 11];
 var count = 0;
 bubbleSort(arr);

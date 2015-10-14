@@ -1,3 +1,7 @@
+/**
+ * [计算一个包含加减法运算的字符串]
+ * @author Lesty
+ */
 var str = "123+100-54";
 getResult(str);
 

@@ -1,4 +1,5 @@
 /**
+ * [最少需要多少辆车]
  * @param  {Array} classList [班级人数列表]
  * @param  {Number} m         [汽车最大装载人数]
  * @return {Number}           [汽车总数]
