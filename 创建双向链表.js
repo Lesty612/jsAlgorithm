@@ -123,3 +123,21 @@ list2.insert("haha", "second");
 list2.displayReverse();
 list2.delete("second");
 list2.displayReverse();
+
+
+
+
+var vim = (function() {
+	var test1 = function() {
+		test2();
+	};
+
+	var test2 = function() {
+		console.dir(this)
+		console.log("test2");
+	};
+
+	return {
+		test1: test1
+	}
+})();

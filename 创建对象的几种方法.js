@@ -36,10 +36,34 @@ var student2 = new Student("Lesty", 21, 1234);
 function Student() {
 }
 
-Student.prototype.name = "Lesty";
-Student.prototype.getName = function() {
-	return this.name;
-};
+Student.prototype = {
+	name: "Lesty",
+	getName: function() {
+		return this.name;
+	}
+}
+
+// 重写prototype后，constructor丢失，所以在这里补回来，不可枚举，指向构造函数
+Object.defineProperty(Student.prototype, "constructor", {
+	enumerable: false,
+	value: Student
+});
 
 var student3 = new Student();
 
+// 4.组合模式
+function Student(name) {
+	// 把实例属性用构造函数来定义
+	this.name = name;
+}
+
+// 把方法以及需要共享的属性用原型来定义
+Student.prototype = {
+	constructor: Student,
+	type: "student",
+	getName: function() {
+		return this.name;
+	}
+}
+
+var student4 = new Student("Lesty");
