@@ -46,7 +46,7 @@ function Student(name, type) {
 
 var student2 = new Student("Lesty", "student");
 
-// 3.组合继承
+// 3.组合继承 缺陷:需要调用2次父类的构造函数，一次在创建子类原型时，另一次在子类构造函数内部
 function People(name) {
 	this.name = name;
 }
@@ -73,3 +73,40 @@ Student.prototype.getType = function() {
 };
 
 var student3 = new Student("Lesty", "student");
+
+// 4.寄生组合式继承
+function object(o) {
+	// 原型式继承
+	function F() {}
+	F.prototype = o;
+	return new F();
+}
+
+function inheritPrototype(baseClass, extendClass) {
+	var newPrototype = object(baseClass.prototype);
+	newPrototype.constructor = extendClass;
+	// 在这里，不需要再创建一个父类的实例，直接用父类的原型对象创建一个新对象，复制给子类的原型
+	extendClass.prototype = newPrototype;
+}
+
+function People(name) {
+	this.name = name;
+}
+
+People.prototype.getName = function() {
+	return this.name;
+};
+
+function Student(name, type) {
+	People.call(this, name);
+
+	this.type = type;
+}
+
+// 实现继承
+inheritPrototype(People, Student);
+Student.prototype.getType = function() {
+	return this.type;
+};
+
+var student4 = new Student("Lesty", "student");
