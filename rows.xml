@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+ <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+  <Author>ting gao</Author>
+  <LastAuthor>ting gao</LastAuthor>
+  <Created>2015-10-24T02:54:43Z</Created>
+  <LastSaved>2015-10-24T03:01:37Z</LastSaved>
+  <Version>14.0</Version>
+ </DocumentProperties>
+ <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
+  <AllowPNG/>
+ </OfficeDocumentSettings>
+ <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
+  <WindowHeight>12300</WindowHeight>
+  <WindowWidth>25600</WindowWidth>
+  <WindowTopX>0</WindowTopX>
+  <WindowTopY>0</WindowTopY>
+  <ProtectStructure>False</ProtectStructure>
+  <ProtectWindows>False</ProtectWindows>
+ </ExcelWorkbook>
+ <Styles>
+  <Style ss:ID="Default" ss:Name="Normal">
+   <Alignment ss:Vertical="Bottom"/>
+   <Borders/>
+   <Font ss:FontName="宋体" x:CharSet="134" x:Family="Swiss" ss:Size="12"
+    ss:Color="#000000"/>
+   <Interior/>
+   <NumberFormat/>
+   <Protection/>
+  </Style>
+  <Style ss:ID="s62">
+   <Alignment ss:Vertical="Bottom"/>
+   <Font ss:FontName="宋体" x:CharSet="134" ss:Size="12" ss:Color="#000000"/>
+   <Interior/>
+  </Style>
+  <Style ss:ID="s63">
+   <Font ss:FontName="宋体" x:CharSet="134" x:Family="Swiss" ss:Size="12"
+    ss:Color="#000000"/>
+  </Style>
+  <Style ss:ID="s65">
+   <Interior/>
+  </Style>
+ </Styles>
+ <Worksheet ss:Name="工作表1">
+  <Table ss:ExpandedColumnCount="7" ss:ExpandedRowCount="42" x:FullColumns="1"
+   x:FullRows="1" ss:DefaultColumnWidth="65" ss:DefaultRowHeight="15">
+   <Row>
+    <Cell><Data ss:Type="Number">2</Data></Cell>
+    <Cell><Data ss:Type="String">anywhere</Data></Cell>
+    <Cell><Data ss:Type="String">/ˈeniweə/</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">any-where</Data></Cell>
+    <Cell><Data ss:Type="String">adv</Data></Cell>
+    <Cell><Data ss:Type="String">在任何地方</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">3</Data></Cell>
+    <Cell><Data ss:Type="String">wonderful</Data></Cell>
+    <Cell ss:StyleID="s63"><Data ss:Type="String">/ˈwʌndə(r)fl/</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">won-der-ful</Data></Cell>
+    <Cell><Data ss:Type="String">adj</Data></Cell>
+    <Cell><Data ss:Type="String">精彩的；绝妙的</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="Number">4</Data></Cell>
+    <Cell><Data ss:Type="String">few</Data></Cell>
+    <Cell><Data ss:Type="String">/fjuː/</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">few</Data></Cell>
+    <Cell><Data ss:Type="String">adj&amp;pron</Data></Cell>
+    <Cell><Data ss:Type="String">不多；很少</Data></Cell>
+   </Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <Print>
+    <ValidPrinterInfo/>
+    <PaperSizeIndex>9</PaperSizeIndex>
+    <HorizontalResolution>-4</HorizontalResolution>
+    <VerticalResolution>-4</VerticalResolution>
+   </Print>
+   <PageLayoutZoom>0</PageLayoutZoom>
+   <Selected/>
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+     <ActiveRow>11</ActiveRow>
+     <ActiveCol>11</ActiveCol>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+</Workbook>
