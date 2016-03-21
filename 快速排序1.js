@@ -6,6 +6,7 @@
 var arr = [3, 1, 5, 7, 9, 2, 11];
 quickSort(arr, 0, arr.length - 1);
 console.dir(arr);
+
 function quickSort(arr, start, end) {
 	// 递归结束点
     if (start >= end) {
