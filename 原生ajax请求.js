@@ -1,5 +1,5 @@
 /**
- * 尝试使用生ajax来请求数据
+ * 尝试使用原生ajax来请求数据
  * @author Lesty
  * @code-date 2015.10.20
  */
