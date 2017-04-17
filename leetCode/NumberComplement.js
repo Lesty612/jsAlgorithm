@@ -21,6 +21,23 @@ var findComplement = function(num) {
     return parseInt(result.reverse().join(''), 2);
 };
 
+var findComplement2 = function(num) {
+    // 用于位移以配合num进行相应操作
+    var mask = ~0;
+    //  取反操作：有效值部分(000)与111异或则取反，填充部分(0000)与0000异或，则保留本身
+    //  所以我们需要最终值类似000111这样的值来与num进行异或
+    //  而通过11111进行左位移操作，则可生成111000，按位反后就变成000111
+    //  ---------
+    //  根据num二进制数值部分的个数，来修改mask
+    //  0000101中101就是有效数值部分
+    //  任何数 & 0都会是0，当mask为1111000时，101 & 000 = 0
+    while(num & mask) {
+        mask <<= 1;
+    }
+
+    return num ^ ~mask;
+};
+
 // 测试push+reverse与直接unshift的耗时
 var test = function(num) {
     console.time('test1');

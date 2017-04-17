@@ -40,12 +40,12 @@ var hammingDistance = function(x, y) {
     return count;
 };
 
-var hammingDistance1 = function(x, y) {
+var hammingDistance2 = function(x, y) {
     // 异或后统计1的个数(正则去除掉为0的字符串，剩下的都是1)
     return (x ^ y).toString(2).replace(/0/g, '').length;
 };
 
-var hammingDistance2 = function(x, y) {
+var hammingDistance3 = function(x, y) {
     // 取得异或结果
     var diff = x ^ y;
     var count = 0;
