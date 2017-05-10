@@ -1,24 +1,31 @@
-// Array Partition I
-// Given an array of 2n integers, your task is to group these integers into n pairs of integer,
-// say (a1, b1), (a2, b2), ..., (an, bn) which makes sum of min(ai, bi) for all i from 1 to n as large as possible.
+// Distribute Candies
+// Given an integer array with even length, where different numbers in this array represent different kinds of candies.
+// Each number means one candy of the corresponding kind. You need to distribute these candies equally in number to brother and sister.
+// Return the maximum number of kinds of candies the sister could gain.
 
 /**
- * @param {string[]} words
- * @return {string[]}
+ * @param {number[]} candies
+ * @return {number}
  */
-var findWords = function(words) {
-    var resultWords = [];
-    // 键盘每行的正则
-    var keyboardPatterns = [/^[qwertyuiop]*$/i, /^[asdfghjkl]*$/i, /^[zxcvbnm]*$/i];
-
-    words.forEach(function(word) {
-        keyboardPatterns.forEach(function(pattern) {
-            if(pattern.test(word)) {
-                console.log('word', word, 'pattern:', pattern);
-                resultWords.push(word);
-            }
-        });
+var distributeCandies = function(candies) {
+    var typeMap = {};
+    var kinds = 0;
+    candies.forEach(function(item) {
+        if(typeMap[item] !== true) {
+            typeMap[item] = true;
+            kinds++;
+        }
     });
 
-    return resultWords;
+    return Math.min(kinds, candies.length / 2);
+};
+
+var distributeCandies2 = function(candies) {
+    var typeMap = {};
+
+    candies.forEach(function(item) {
+        typeMap[item] = true;
+    });
+
+    return Math.min(Object.keys(typeMap).length, candies.length / 2);
 };
