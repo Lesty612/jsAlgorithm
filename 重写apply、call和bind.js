@@ -64,3 +64,37 @@ function apply(thisArg, args) {
 
     return result;
 }
+
+function bind(thisArg) {
+    var fn = this;
+    var fnArgs = [];
+    var bindArguments = arguments;
+
+    if(typeof fn !== 'function') {
+        throw new TypeError('调用bind方法的必须是函数');
+    }
+
+    for(var i = 1, len = bindArguments.length; i < len; i++) {
+        fnArgs.push('bindArguments[' + i + ']');
+    }
+
+
+    thisArg = Object(thisArg) || Window;
+
+    return function () {
+        var args = [].concat(fnArgs);
+        var result;
+
+        for(var i = 0, len = arguments.length; i < len; i++) {
+            args.push('arguments[' + i + ']');
+        }
+
+        thisArg.fn = fn;
+        console.log('thisArg.fn(' + args + ')');
+        result = eval('thisArg.fn(' + args + ')');
+
+        delete thisArg.fn;
+
+        return result;
+    }
+}
