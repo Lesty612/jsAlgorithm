@@ -3,9 +3,30 @@
  * @author Lesty
  * @code-date 2020.6.3
  */
-function call() {
+function call(thisArg) {
+    var fn = this;
+    var args = [];
+    var result;
 
+    if(typeof fn !== 'function') {
+        throw new TypeError('调用call方法的必须是函数');
+    }
 
+    thisArg = Object(thisArg) || Window;
+    thisArg.fn = fn;
+    if(arguments.length === 1) {
+        result = thisArg.fn();
+    } else {
+        for(var i = 1, len = arguments.length; i < len; i++) {
+            args.push('arguments[' + i + ']');
+        }
+
+        result = eval('thisArg.fn(' + args + ')');
+    }
+
+    delete thisArg.fn;
+
+    return result;
 }
 
 /**
