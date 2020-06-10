@@ -78,10 +78,9 @@ function bind(thisArg) {
         fnArgs.push('bindArguments[' + i + ']');
     }
 
-
     thisArg = Object(thisArg) || Window;
 
-    return function () {
+    function bound() {
         var args = [].concat(fnArgs);
         var result;
 
@@ -89,12 +88,23 @@ function bind(thisArg) {
             args.push('arguments[' + i + ']');
         }
 
-        thisArg.fn = fn;
-        console.log('thisArg.fn(' + args + ')');
-        result = eval('thisArg.fn(' + args + ')');
-
-        delete thisArg.fn;
+        if(this instanceof bound) {
+            // new操作符创建实例，此时bound为构造函数
+            this.fn = fn;
+            result = eval('this.fn(' + args + ')') || this;
+            console.log('this.fn result', result);
+            delete this.fn;
+        } else {
+            // 直接调用bound
+            thisArg.fn = fn;
+            result = eval('thisArg.fn(' + args + ')');
+            delete thisArg.fn;
+        }
 
         return result;
     }
+
+    bound.prototype = fn.prototype;
+
+    return bound;
 }
