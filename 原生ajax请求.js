@@ -10,14 +10,14 @@
  */
 function createXHR() {
 	// 根据不同浏览器采用不同的方式创建XHR对象
-	if(typeof XMLHttpRequest != "undefined") {
+	if(XMLHttpRequest) {
 		// code for IE7+, Firefox, Chrome, Opera, Safari
 		return new XMLHttpRequest();
-	} else if(typeof ActiveXObject != "undefined") {
+	} else if(ActiveXObject) {
 		// code for IE6, IE5
 		// 为createXHR这个函数自定义一个axVersion属性
 		// 这样再次调用该函数时就不需要去确认版本了
-		if(typeof arguments.callee.axVersion != "string") {
+		if(typeof arguments.callee.axVersion !== "string") {
 			// 版本数组
 			var versions = ["MSXML2.XMLHTTP", "Microsoft.XMLHTTP"];
 			// 获取正确版本号
@@ -88,9 +88,9 @@ function getAjax(url, data, callback, async) {
 	// 2.捕获readyState改变事件
 	xhr.onreadystatechange = function() {
 		// 已接受到全部响应数据
-		if(xhr.readyState == 4) {
+		if(xhr.readyState === 4) {
 			// 响应状态码成功或者资源没有被修改(304)
-			if ((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304) {
+			if ((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304) {
 				//请求发送成功，调用回调函数
 				callback(xhr.responseText, xhr.status, xhr);
 			} else {
@@ -100,11 +100,11 @@ function getAjax(url, data, callback, async) {
 		}
 	};
 	// 3.启动请求，需要将data解析成查询请求
-	xhr.open("get", getParamURL(url, data), async === false ? false : true);
+	xhr.open("get", getParamURL(url, data), async);
 	// 4.设置Mime类型为json
 	xhr.overrideMimeType("text/json");
 	// 5.发送请求
-	xhr.send(null);
+	xhr.send();
 }
 
 /**
@@ -121,9 +121,9 @@ function postAjax(url, data, callback, async) {
 	// 2.捕获readyState改变事件
 	xhr.onreadystatechange = function() {
 		// 已接受到全部响应数据
-		if(xhr.readyState == 4) {
+		if(xhr.readyState === 4) {
 			// 响应状态码成功或者资源没有被修改(304)
-			if((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304) {
+			if((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304) {
 				//请求发送成功，调用回调函数
 				callback(xhr.responseText, xhr.status, xhr);
 			} else {
@@ -131,10 +131,10 @@ function postAjax(url, data, callback, async) {
 				console.log("状态码：" + xhr.status + ";状态说明：" + xhr.statusText);
 			}
 		}
-	}
+	};
 
 	// 3.启动请求，需要将data解析成查询请求
-	xhr.open("post", url, async === false ? false : true);
+	xhr.open("post", url, async);
 	// 4.设置头部信息，模仿表单提交数据
 	xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	// 5.设置Mime类型为json
