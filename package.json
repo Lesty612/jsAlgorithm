@@ -1,0 +1,24 @@
+{
+  "name": "jsalgorithm",
+  "version": "1.0.0",
+  "description": "javascript实现的相关算法",
+  "main": "AOP.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lesty612/jsAlgorithm.git"
+  },
+  "keywords": [
+    "javascript",
+    "algorithm"
+  ],
+  "author": "Lesty <lesty612@163.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lesty612/jsAlgorithm/issues"
+  },
+  "homepage": "https://github.com/Lesty612/jsAlgorithm#readme"
+}
