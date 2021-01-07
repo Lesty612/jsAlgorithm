@@ -10,9 +10,11 @@ function selectionSort(arr) {
 
     let compareCounter = 0;
     let swapCounter = 0;
+    // 剩一个的时候不需要再比较，所以i < len - 1
     for(let i = 0, len = arr.length; i < len - 1; i++) {
         let minIndex = i;
 
+        // 注意这里是i+1，也就是拿后一个元素和当前元素比较
         for(let j = i + 1; j < len; j++) {
             compareCounter++;
             if(arr[j] < arr[minIndex]) {
