@@ -43,9 +43,9 @@ function insertionSort2(arr) {
     let swapCounter = 0;
     // 注意i = 1
     for(let i = 1, len = arr.length; i < len; i++) {
-        let temp = arr[i];
+        const temp = arr[i];
         let j = i;
-        for(j = i; j > 0; j--) {
+        for(; j > 0; j--) {
             compareCounter++;
             /*
             * 因为左侧的数据都是比较过后有序了的
