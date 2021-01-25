@@ -7,6 +7,7 @@ import {startSortTest, swap} from "./utils.js";
 
 function selectionSort(arr) {
     console.log('原始数组: ', JSON.stringify(arr));
+    console.time('time');
 
     let compareCounter = 0;
     let swapCounter = 0;
@@ -29,6 +30,7 @@ function selectionSort(arr) {
     console.log('比较次数: ', compareCounter);
     console.log('交换次数: ', swapCounter);
     console.log('最终数组: ', JSON.stringify(arr));
+    console.timeEnd('time');
     console.log('--------------------------');
 
     return arr;
